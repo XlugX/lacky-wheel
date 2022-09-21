@@ -1,0 +1,138 @@
+.coin-container {
+	width: 200px;
+	height: 200px;
+	left: -447px;
+	top: -30px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	opacity: 1;
+	-webkit-transition: margin 1s cubic-bezier(0.2, 0.6, 0.3, 1), opacity 2s ease;
+	transition: margin 1s cubic-bezier(0.2, 0.6, 0.3, 1), opacity 2s ease;
+	animation-duration: 4s;
+	margin-left: 76px;
+	margin-top: -25px;
+	position: absolute;
+	display: block;
+	z-index: 100;
+}
+
+.one {
+	@media (max-width: 769px) {
+		top: -2px;
+		z-index: 0;
+		left: 200px;
+	}
+}
+
+.two {
+	left: -380px;
+	top: 452px;
+
+	@media (max-width: 769px) {
+		left: -85px;
+		top: 401px;
+		z-index: 1;
+	}
+}
+
+.three {
+	left: -190px;
+	top: 127px;
+
+	@media (max-width: 769px) {
+		left: -128px;
+		z-index: 0;
+		top: 19px;
+	}
+}
+
+.for {
+	left: -110px;
+	top: 507px;
+	z-index: 0;
+
+	@media (max-width: 769px) {
+		left: 200px;
+		top: 300px;
+	}
+}
+
+.five {
+	left: 832px;
+	top: 142.3px;
+
+	@media (max-width: 769px) {
+		left: -73px;
+		z-index: 0;
+		top: -75px;
+	}
+}
+
+.six {
+	left: 790px;
+	top: 434px;
+
+	@media (max-width: 769px) {
+		left: 152px;
+		top: -300px;
+		z-index: 0;
+	}
+}
+
+.seven {
+	left: 540px;
+	z-index: 0;
+	top: 506px;
+
+	@media (max-width: 769px) {
+		display: none;
+	}
+}
+
+.eight {
+	top: 55px;
+	left: 512px;
+	z-index: 0;
+
+	@media (max-width: 769px) {
+		left: 0;
+		top: 0;
+	}
+}
+
+.coin {
+	width: 195px;
+	height: 145px;
+	background-image: url('https://imagizer.imageshack.com/img923/5724/5UOs47.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: block;
+}
+
+.coinModal {
+	z-index: 6;
+	position: absolute;
+}
+
+.coinModal.one {
+	height: 95px;
+	transform: rotate(75deg);
+	left: 5%;
+	top: 78%;
+}
+
+.coinModal.two {
+	top: 15px;
+	left: 85%;
+	width: 100px;
+	height: 85px;
+	transform: rotate(65deg);
+}
+
+.coinModal.three {
+	left: 87%;
+	top: 60%;
+	height: 230px;
+}
