@@ -11,7 +11,7 @@ export const createWheel = () => {
     const startBtn = $('.spinBtn');
     const control = $('.ticker');
     let selected = '';
-    const audio = new Audio();
+    const audio = new Audio('https://dl.sndup.net/v6cs/tick.mp3');
     const random = Math.random();
     const size = listGift.length;
     let rotate = 360 / size;
@@ -54,21 +54,27 @@ export const createWheel = () => {
 
     // функция запуска вращения с плавной остановкой
     const runTickerAnimation = () => {
+
         // взяли код анимации отсюда: https://css-tricks.com/get-value-of-css-rotation-through-javascript/
         const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
         const a = values[0];
         const b = values[1];
         let rad = Math.atan2(b, a);
-
         if (rad < 0) rad += (2 * Math.PI);
+
 
         const angle = Math.round(rad * (180 / Math.PI));
         const slice = Math.floor(angle / prizeSlice);
 
         if (currentSlice !== slice) {
-            control.style.animation = "none";
-            setTimeout(() => control.style.animation = null, 1);
+            control.style.transform = 'rotate(-73deg)'
+
+            setTimeout(() => {
+                audio.play()
+                control.style.transform = 'rotate(-43deg)';
+            }, 1)
             currentSlice = slice;
+        } else {
         }
 
 
@@ -118,10 +124,10 @@ export const createWheel = () => {
         });
         wheel.classList.add(spinClass);
         shape.classList.add('pulse-shape');
-        audio.src = 'https://zvukipro.com/uploads/files/2020-08/1596600420_wheel_of_fortune_style_wheel_spin_001_13209.mp3'; // Указываем путь к звуку "клика"
-        audio.autoplay = true; // Автоматически запускаем
+        // audio.src = 'https://zvukipro.com/uploads/files/2020-08/1596600420_wheel_of_fortune_style_wheel_spin_001_13209.mp3'; // Указываем путь к звуку "клика"
+        // audio.autoplay = true; // Автоматически запускаем
 
-        control.classList.add('spinning')
+        // control.classList.add('spinning')
         wheel.style.setProperty("--rotate", rotation);
         runTickerAnimation();
     });
