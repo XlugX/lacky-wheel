@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import { listGift, vipListGift } from './wheelsInfo';
+import TickSound from '../assets/tick.mp3'
+import TickSound1 from '../assets/tick1.mp3'
 import { openedModal } from './modal';
 
 
@@ -76,12 +78,14 @@ export const wheelRender = (listProp) => {
 
         });
 
-        var tick = new Audio('https://dl.sndup.net/v6cs/tick.mp3');
+        var tick = new Audio(TickSound1);
+    let playing = false;
 
 
         $(document).on('click', '.spin', function (e) {
             const gift = getGift();
             e.preventDefault();
+            tick.play()
             // $('.wheel').superWheel('start', 'value', Math.floor(Math.random() * 2));
             $('.wheel').superWheel('start', 'winIn', gift.winIn);
             $(this).prop('disabled', true);
@@ -93,12 +97,14 @@ export const wheelRender = (listProp) => {
 
 
         $('.wheel').superWheel('onStep', function (results) {
-            if (typeof tick.currentTime !== 'undefined')
-                tick.currentTime = 0;
-            tick.play();
+               // if (typeof tick.currentTime !== 'undefined') {
+               //     tick.currentTime = 0;
+               // }
+           // tick.play();
         });
 
         $('.wheel').superWheel('onComplete', function (results) {
+            tick.pause()
             openedModal(results, 'gift');
             $('.shape').removeClass('pulse-shape');
             $('.spin-to-win:disabled').prop('disabled', false);

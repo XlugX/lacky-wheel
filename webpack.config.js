@@ -63,6 +63,13 @@ module.exports = {
         }
       },
       {
+        test: /\.(gif|ogg|mp3|wav)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
+      },
+      {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
         use: [
           {

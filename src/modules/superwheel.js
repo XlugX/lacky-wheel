@@ -514,6 +514,7 @@ import jQuery from 'jquery'
                             if (typeof callback === "function") callback.call(self.$element, self.slicePercent, self.circlePercent);
                         });
                     }
+                    // console.log(123);
                     if (self.lastStep !== self.currentStep) {
                         self.lastStep = self.currentStep;
                         if (
@@ -529,7 +530,7 @@ import jQuery from 'jquery'
                                 {
                                     easing: "linear",
                                     duration: Mduration / 4,
-                                    step: function (now) {
+                                    step: function (now, anim) {
                                         markerNow = now;
                                         $(".sWheel-marker").css({
                                             "-webkit-transform": "rotate(" + now + "deg)",
