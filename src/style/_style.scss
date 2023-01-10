@@ -72,7 +72,7 @@
   }
 }
 
-.wheel {
+.wheel-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +216,31 @@
   height: 580px;
   border-radius: 50%;
   position: relative;
-  transform: rotate(calc(var(--rotate, 50) * 1deg));
+  //transform: rotate(calc(var(--rotate, 50) * 1deg));
+  display: flex;
+  background-color: #131360;
+  border: 2px solid #fff;
+
+  @media (max-width: 1280px) {
+    width: 504px;
+    height: 504px;
+  }
+
+  @media (max-width: 769px) {
+    width: 325px;
+    height: 325px;
+  }
+}
+
+.sWheel-wheel {
+  z-index: 1;
+  overflow: hidden;
+  list-style: none;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  position: relative;
+  //transform: rotate(calc(var(--rotate, 50) * 1deg));
   display: flex;
   background-color: #131360;
   border: 2px solid #fff;
@@ -248,7 +272,7 @@
 }
 
 .dealWheel.is-spinning{
-  transition: transform 8s cubic-bezier(0.2, 0.1, 0, 1);
+  transition: transform 2s cubic-bezier(0.2, 0.1, 0, 1);
 }
 
 .shape.pulse-shape {
@@ -322,7 +346,7 @@
 
 .center {
   border-style: none;
-  z-index: 3;
+  z-index: 13;
   height: 168px;
   width: 168px;
   position: absolute;

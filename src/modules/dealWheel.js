@@ -113,23 +113,23 @@ export const createWheel = () => {
     };
 
     startBtn.addEventListener('click', () => {
-        startBtn.disabled = true;
-        currentRotate += 360 * 10;
-        rotation = currentRotate - getGift(random).index * rotate - rotate / 2;
-        prizeNodes.forEach((prize) => {
-            const blur = prize.querySelector('div')
-            if (blur.classList.contains('blur')) {
-                blur.classList.remove('blur')
-            }
-        });
-        wheel.classList.add(spinClass);
+        // startBtn.disabled = true;
+        // currentRotate += 360 * 10;
+        // rotation = currentRotate - getGift(random).index * rotate - rotate / 2;
+        // prizeNodes.forEach((prize) => {
+        //     const blur = prize.querySelector('div')
+        //     if (blur.classList.contains('blur')) {
+        //         blur.classList.remove('blur')
+        //     }
+        // });
+        // wheel.classList.add(spinClass);
         shape.classList.add('pulse-shape');
         // audio.src = 'https://zvukipro.com/uploads/files/2020-08/1596600420_wheel_of_fortune_style_wheel_spin_001_13209.mp3'; // Указываем путь к звуку "клика"
         // audio.autoplay = true; // Автоматически запускаем
 
         // control.classList.add('spinning')
-        wheel.style.setProperty("--rotate", rotation);
-        runTickerAnimation();
+        // wheel.style.setProperty("--rotate", rotation);
+        // runTickerAnimation();
     });
 
     // отслеживаем, когда закончилась анимация вращения колеса
@@ -149,13 +149,13 @@ export const createWheel = () => {
         if(checkbox.checked) {
             container.classList.add('vip-container')
             modal.classList.add('vip-modal')
-            renderItem(vipListGift)
+            // renderItem(vipListGift)
         } else {
             container.classList.remove('vip-container')
             modal.classList.remove('vip-modal')
-            renderItem(listGift)
+            // renderItem(listGift)
         }
     })
 
-    renderItem(listGift);
+    // renderItem(listGift);
 }

@@ -4,8 +4,8 @@ export const giftModalBody = (gift) => `
     <div class="text">
         <div class="title">Вітаємо!</div>
         <div class="title">Ви виграли</div>
-        <div class="gift">${gift?.giftName}</div>
-        <div class="gift-description">${gift?.giftDescription}</div>
+        <div class="gift">${gift?.text}</div>
+        <div class="gift-description">${gift?.message}</div>
     </div>
     <button id="closeBtn" class="spinBtn continue"><span>ПРОДОВЖИТИ</span></button>
     <span class="coin coinModal one"></span>
@@ -27,9 +27,9 @@ export const infoModalBody = `
                     Ви можете отримати:
                 </div>
                 <div class="gift-block">
-                    ${listGift?.map(({giftName, giftDescription}) => `<div class="info-item">
-                    <div class="info-gift-name">${giftName}</div>
-                    <div class="info-description txt-left">${giftDescription}</div>
+                    ${listGift?.map(({text, message}) => `<div class="info-item">
+                    <div class="info-gift-name">${text}</div>
+                    <div class="info-description txt-left">${message}</div>
                     </div>`).join('')}
                     
                     <ul class="rules-list">

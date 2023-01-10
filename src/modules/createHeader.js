@@ -1,3 +1,6 @@
+import { wheelRender } from './wheel';
+import { listGift, vipListGift } from './wheelsInfo';
+
 export const createHeader = () => {
     let COUNTER = 0;
     const container = document.querySelector('.container');
@@ -31,6 +34,20 @@ export const createHeader = () => {
     `);
 
     checkbox = document.querySelector('.wheel-checkbox');
+    checkbox.addEventListener('click', (e) => {
+        const modal = document.querySelector('.modal-wrapper');
+        if(checkbox.checked) {
+            container.classList.add('vip-container')
+            modal.classList.add('vip-modal')
+            wheelRender(vipListGift)
+        } else {
+            container.classList.remove('vip-container')
+            modal.classList.remove('vip-modal')
+            wheelRender(listGift)
+        }
+    });
+
+
 
     function checkDisabled() {
         if (COUNTER !== 0) {
